@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fwd Studio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #E9EFF4;
+    --ink: #0D3B63;
+    --ink-soft: #4A7194;
+    --sky: #4B9FDD;
+    --sky-deep: #1C6FAE;
+    --card-bg: #FFFFFF;
+    --line: rgba(13, 59, 99, 0.12);
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 0 24px;
+    position: relative;
+  }
+
+  .tri-mark {
+    position: absolute;
+    top: -40px;
+    right: -60px;
+    width: 300px;
+    height: 300px;
+    opacity: 0.06;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  header {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 28px 0 0;
+  }
+
+  .logo-row img {
+    height: 34px;
+    width: auto;
+    display: block;
+  }
+
+  .catalog-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--sky-deep);
+    background: rgba(75, 159, 221, 0.14);
+    padding: 6px 11px;
+    border-radius: 20px;
+    font-weight: 700;
+  }
+
+  .hero {
+    position: relative;
+    z-index: 1;
+    padding: 48px 0 40px;
+  }
+
+  .hero-eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--sky-deep);
+    margin: 0 0 16px;
+  }
+
+  h1 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    font-size: clamp(32px, 8vw, 46px);
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+    margin: 0 0 18px;
+  }
+
+  h1 span { color: var(--sky-deep); }
+
+  .hero-sub {
+    font-size: 15.5px;
+    line-height: 1.6;
+    color: var(--ink-soft);
+    margin: 0;
+  }
+
+  /* CATEGORY GROUPS */
+  .groups {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    padding-bottom: 56px;
+  }
+
+  .group-card {
+    background: var(--card-bg);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 1px 2px rgba(13, 59, 99, 0.04);
+  }
+
+  .group-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .group-head h2 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    margin: 0;
+  }
+
+  .group-count {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--ink-soft);
+  }
+
+  .link-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 15px 20px;
+    text-decoration: none;
+    color: var(--ink);
+    border-bottom: 1px solid var(--line);
+    transition: background 0.15s ease;
+  }
+
+  .link-row:last-child { border-bottom: none; }
+
+  a.link-row { cursor: pointer; }
+  a.link-row:hover { background: rgba(75, 159, 221, 0.07); }
+
+  .link-text { min-width: 0; }
+
+  .link-title {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    margin: 0 0 2px;
+  }
+
+  .link-desc {
+    font-size: 12.5px;
+    color: var(--ink-soft);
+    margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .link-status {
+    flex-shrink: 0;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 4px 9px;
+    border-radius: 4px;
+    white-space: nowrap;
+  }
+
+  .link-status.soon {
+    border: 1px solid var(--line);
+    color: var(--ink-soft);
+  }
+
+  .link-status.live {
+    background: var(--sky-deep);
+    color: #fff;
+  }
+
+  footer {
+    position: relative;
+    z-index: 1;
+    border-top: 1px solid var(--line);
+    padding: 22px 0 40px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--ink-soft);
+    letter-spacing: 0.03em;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <svg class="tri-mark" viewBox="0 0 100 100">
+    <polygon points="10,10 90,50 10,90" fill="#0D3B63"/>
+  </svg>
+
+  <header>
+    <div class="logo-row">
+      <img src="logo.jpeg" alt="Fwd Studio">
+    </div>
+    <div class="catalog-tag">Catalogo</div>
+  </header>
+
+  <section class="hero">
+    <p class="hero-eyebrow">Fwd Studio</p>
+    <h1>Tutto in <span>un solo link.</span></h1>
+    <p class="hero-sub">App, PWA e libri, raggruppati per categoria. Scegli quello che ti serve qui sotto.</p>
+  </section>
+
+  <div class="groups" id="groups"></div>
+
+  <footer>
+    <span>Fwd Studio</span>
+    <span>Catalogo — 2026</span>
+  </footer>
+
+</div>
+
+<script>
+  /* ============================================================
+     PER AGGIUNGERE UN LINK:
+     copia uno degli oggetti qui sotto, incollalo nell'array,
+     e modifica i campi. Non serve toccare nient'altro nella
+     pagina — le voci con la stessa "category" vengono raggruppate
+     automaticamente sotto lo stesso contenitore, nell'ordine in
+     cui appaiono nell'array.
+
+     category:    il nome del gruppo (es. "Coaching", "Libri").
+                  Se usi un nome già presente, la voce entra
+                  in quel gruppo; se è nuovo, ne crea uno.
+     status:      "soon" -> etichetta "Prossimamente", riga non cliccabile
+                  "live" -> etichetta "Disponibile", riga cliccabile
+     link:        usato solo se status è "live"
+     ============================================================ */
+  const products = [
+    {
+      category: "Coaching",
+      status: "soon",
+      title: "Nome prodotto",
+      description: "Breve descrizione",
+      link: ""
+    },
+    {
+      category: "Coaching",
+      status: "soon",
+      title: "Nome prodotto",
+      description: "Breve descrizione",
+      link: ""
+    },
+    {
+      category: "Libri",
+      status: "live",
+      title: "Nome libro",
+      description: "Breve descrizione",
+      link: "#"
+    },
+    {
+      category: "Libri",
+      status: "live",
+      title: "Nome libro",
+      description: "Breve descrizione",
+      link: "#"
+    }
+  ];
+
+  const container = document.getElementById('groups');
+
+  // raggruppa mantenendo l'ordine di prima apparizione della categoria
+  const groupOrder = [];
+  const grouped = {};
+  products.forEach(p => {
+    if (!grouped[p.category]) {
+      grouped[p.category] = [];
+      groupOrder.push(p.category);
+    }
+    grouped[p.category].push(p);
+  });
+
+  groupOrder.forEach(categoryName => {
+    const items = grouped[categoryName];
+
+    const groupCard = document.createElement('div');
+    groupCard.className = 'group-card';
+
+    const head = document.createElement('div');
+    head.className = 'group-head';
+    head.innerHTML = `
+      <h2>${categoryName}</h2>
+      <span class="group-count">${items.length}</span>
+    `;
+    groupCard.appendChild(head);
+
+    items.forEach(p => {
+      const isLive = p.status === 'live';
+      const row = document.createElement(isLive ? 'a' : 'div');
+      row.className = 'link-row';
+      if (isLive) row.href = p.link;
+
+      row.innerHTML = `
+        <div class="link-text">
+          <p class="link-title">${p.title}</p>
+          <p class="link-desc">${p.description}</p>
+        </div>
+        <span class="link-status ${p.status}">${isLive ? 'Disponibile' : 'Prossimamente'}</span>
+      `;
+      groupCard.appendChild(row);
+    });
+
+    container.appendChild(groupCard);
+  });
+</script>
+</body>
+</html>
