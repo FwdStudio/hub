@@ -268,50 +268,50 @@
       category: "Libri collana Le programmazioni stagionali",
       status: "live",
       title: "Programmazione Stagionale Piccoli Amici",
-      description: "Il gioco, la palla e i primi passi nel calcio — tutte le sedute della stagione",
+      description: "",
       link: "https://amzn.eu/d/04wiNTLv"
     },
     {
       category: "Libri collana Le programmazioni stagionali",
       status: "live",
       title: "Programmazione Stagionale Primi Calci",
-      description: "Tecnica individuale e psicocinetica al centro della stagione",
+      description: "",
       link: "https://amzn.eu/d/0bH46i0h"
     },
     {
       category: "Libri collana Le programmazioni stagionali",
       status: "live",
       title: "Programmazione Stagionale Esordienti",
-      description: "Tecnica, psicocinetica e prime situazioni di gioco a due e tre giocatori",
+      description: "",
       link: "https://amzn.eu/d/017wBPhO"
     },
     {
       category: "Libri collana Le programmazioni stagionali",
       status: "live",
       title: "Programmazione Stagionale Giovanissimi",
-      description: "Tutte le sedute della stagione, dal pre-campionato a giugno",
+      description: "",
       link: "https://amzn.eu/d/0cKaZ2TI"
     },
     {
       category: "Libri collana Le programmazioni stagionali",
       status: "live",
       title: "Programmazione Stagionale Allievi",
-      description: "Pre-campionato, tattica di gioco e psicocinetica per tutta la stagione",
+      description: "",
       link: "https://amzn.eu/d/0dx3zm6O"
     },
     {
       category: "Libri collana Le programmazioni stagionali",
       status: "soon",
       title: "Programmazione Stagionale Juniores",
-      description: "Pre-campionato, tattica di gioco e psicocinetica per tutta la stagione",
-      link: "#"
+      description: "",
+      link: "https://amzn.eu/d/06v4kqcA"
     },
     {
       category: "Libri collana Le programmazioni stagionali",
       status: "soon",
       title: "Programmazione Stagionale Prime squadre",
-      description: "Per Prima, Seconda e Terza Categoria",
-      link: "#"
+      description: "",
+      link: "https://amzn.eu/d/0bp0COBW"
     },
     {
       category: "Coaching",
@@ -358,7 +358,7 @@
       row.innerHTML = `
         <div class="link-text">
           <p class="link-title">${p.title}</p>
-          <p class="link-desc">${p.description}</p>
+          ${p.description ? `<p class="link-desc">${p.description}</p>` : ''}
         </div>
         <span class="link-status ${p.status}">${isLive ? 'Disponibile' : 'Prossimamente'}</span>
       `;
