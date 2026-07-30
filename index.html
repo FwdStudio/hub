@@ -172,12 +172,12 @@
   }
 
   .link-desc {
-    font-size: 12.5px;
-    color: var(--ink-soft);
-    margin: 0;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+  font-size: 12.5px;
+  color: var(--ink-soft);
+  margin: 4px 0 0; /* Aggiunge un leggero margine superiore dal titolo */
+  line-height: 1.4; /* Migliora la leggibilità quando va a capo */
+  white-space: normal; /* Permette al testo di andare a capo */
+}
   }
 
   .link-status {
