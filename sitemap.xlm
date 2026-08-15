@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://fwdstudio.github.io/hub/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://fwdstudio.github.io/mister-board/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://fwdstudio.github.io/hub/blog/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fwdstudio.github.io/hub/blog/gestire-rosa-calendario-squadra-giovanile/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://fwdstudio.github.io/hub/chi-siamo/</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!--
+    PER OGNI NUOVO ARTICOLO: aggiungi un blocco <url> come questo,
+    con lo slug della cartella che hai creato.
+
+    <url>
+      <loc>https://fwdstudio.github.io/hub/blog/nome-nuovo-articolo/</loc>
+      <changefreq>monthly</changefreq>
+      <priority>0.6</priority>
+    </url>
+  -->
+
+</urlset>
