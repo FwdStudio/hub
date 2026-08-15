@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog — Fwd Studio</title>
+<meta name="description" content="Guide pratiche su calcio giovanile, coaching e organizzazione familiare: gli articoli di Fwd Studio dietro Mister Board, Coach Draw e le altre PWA.">
+<link rel="canonical" href="https://fwdstudio.github.io/hub/blog/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Blog — Fwd Studio">
+<meta property="og:description" content="Guide pratiche su calcio giovanile, coaching e organizzazione familiare, dagli sviluppatori di Mister Board e Coach Draw.">
+<meta property="og:url" content="https://fwdstudio.github.io/hub/blog/">
+<meta property="og:image" content="https://fwdstudio.github.io/hub/logo.jpeg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #E9EFF4;
+    --ink: #0D3B63;
+    --ink-soft: #4A7194;
+    --sky: #4B9FDD;
+    --sky-deep: #1C6FAE;
+    --card-bg: #FFFFFF;
+    --line: rgba(13, 59, 99, 0.12);
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 0 24px;
+    position: relative;
+  }
+
+  .tri-mark {
+    position: absolute;
+    top: -40px;
+    right: -60px;
+    width: 300px;
+    height: 300px;
+    opacity: 0.06;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  header {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 28px 0 0;
+  }
+
+  .logo-row a { display: block; }
+  .logo-row img { height: 34px; width: auto; display: block; }
+
+  .catalog-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--sky-deep);
+    background: rgba(75, 159, 221, 0.14);
+    padding: 6px 11px;
+    border-radius: 20px;
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .hero {
+    position: relative;
+    z-index: 1;
+    padding: 48px 0 40px;
+  }
+
+  .hero-eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--sky-deep);
+    margin: 0 0 16px;
+  }
+
+  h1 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    font-size: clamp(32px, 8vw, 46px);
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+    margin: 0 0 18px;
+  }
+
+  h1 span { color: var(--sky-deep); }
+
+  .hero-sub {
+    font-size: 15.5px;
+    line-height: 1.6;
+    color: var(--ink-soft);
+    margin: 0;
+  }
+
+  /* POST LIST — stesso pattern delle group-card dell'hub */
+  .groups {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    padding-bottom: 56px;
+  }
+
+  .group-card {
+    background: var(--card-bg);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 1px 2px rgba(13, 59, 99, 0.04);
+  }
+
+  .group-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .group-head h2 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    margin: 0;
+  }
+
+  .group-count {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--ink-soft);
+  }
+
+  .link-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 15px 20px;
+    text-decoration: none;
+    color: var(--ink);
+    border-bottom: 1px solid var(--line);
+    transition: background 0.15s ease;
+  }
+
+  .link-row:last-child { border-bottom: none; }
+  a.link-row { cursor: pointer; }
+  a.link-row:hover { background: rgba(75, 159, 221, 0.07); }
+
+  .link-text { min-width: 0; }
+
+  .link-title {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    margin: 0 0 2px;
+  }
+
+  .link-desc {
+    font-size: 12.5px;
+    color: var(--ink-soft);
+    margin: 4px 0 0;
+    line-height: 1.4;
+    white-space: normal;
+  }
+
+  .link-date {
+    flex-shrink: 0;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10.5px;
+    color: var(--ink-soft);
+    white-space: nowrap;
+  }
+
+  .empty-state {
+    padding: 32px 20px;
+    text-align: center;
+    color: var(--ink-soft);
+    font-size: 14px;
+  }
+
+  footer {
+    position: relative;
+    z-index: 1;
+    border-top: 1px solid var(--line);
+    padding: 22px 0 40px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--ink-soft);
+    letter-spacing: 0.03em;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  footer a { color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <svg class="tri-mark" viewBox="0 0 100 100">
+    <polygon points="10,10 90,50 10,90" fill="#0D3B63"/>
+  </svg>
+
+  <header>
+    <div class="logo-row">
+      <a href="../"><img src="../logo.jpeg" alt="Fwd Studio"></a>
+    </div>
+    <a class="catalog-tag" href="../">Catalogo</a>
+  </header>
+
+  <section class="hero">
+    <p class="hero-eyebrow">Blog</p>
+    <h1>Guide pratiche <span>per chi allena e organizza</span></h1>
+    <p class="hero-sub">Articoli su calcio giovanile, coaching e vita di famiglia, nati dagli stessi problemi che risolvono le nostre PWA.</p>
+  </section>
+
+  <div class="groups" id="groups"></div>
+
+  <footer>
+    <span>Fwd Studio</span>
+    <span><a href="../">← Torna al catalogo</a></span>
+  </footer>
+
+</div>
+
+<script>
+  /* ============================================================
+     PER AGGIUNGERE UN ARTICOLO:
+     1. duplica la cartella /blog/esempio-articolo/, rinominala
+        con lo slug del nuovo post (es. /blog/come-organizzare-allenamenti/)
+     2. modifica il contenuto del suo index.html
+     3. aggiungi un oggetto qui sotto con gli stessi campi:
+
+     slug:        deve combaciare col nome della cartella
+     title:       titolo mostrato nella lista
+     description: estratto breve (1 riga)
+     date:        formato leggibile, es. "14 ago 2026"
+     ============================================================ */
+  const posts = [
+    {
+      slug: "gestire-rosa-calendario-squadra-giovanile",
+      title: "Come gestire rosa, calendario e presenze di una squadra giovanile",
+      description: "Basta fogli Excel e gruppi WhatsApp sparsi: come organizzare tutto in modo semplice, dal telefono.",
+      date: "14 ago 2026"
+    }
+  ];
+
+  const container = document.getElementById('groups');
+
+  if (posts.length === 0) {
+    container.innerHTML = `
+      <div class="group-card">
+        <div class="empty-state">Il primo articolo arriva presto.</div>
+      </div>
+    `;
+  } else {
+    const groupCard = document.createElement('div');
+    groupCard.className = 'group-card';
+
+    const head = document.createElement('div');
+    head.className = 'group-head';
+    head.innerHTML = `
+      <h2>Articoli recenti</h2>
+      <span class="group-count">${posts.length}</span>
+    `;
+    groupCard.appendChild(head);
+
+    posts.forEach(p => {
+      const row = document.createElement('a');
+      row.className = 'link-row';
+      row.href = `${p.slug}/`;
+
+      row.innerHTML = `
+        <div class="link-text">
+          <p class="link-title">${p.title}</p>
+          ${p.description ? `<p class="link-desc">${p.description}</p>` : ''}
+        </div>
+        <span class="link-date">${p.date}</span>
+      `;
+      groupCard.appendChild(row);
+    });
+
+    container.appendChild(groupCard);
+  }
+</script>
+</body>
+</html>
