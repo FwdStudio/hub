@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Come gestire rosa, calendario e presenze di una squadra giovanile — Blog Fwd Studio</title>
+<meta name="description" content="Basta fogli Excel e gruppi WhatsApp sparsi: ecco come organizzare rosa, calendario e presenze di una squadra giovanile in modo semplice, dal telefono.">
+<link rel="canonical" href="https://fwdstudio.github.io/hub/blog/gestire-rosa-calendario-squadra-giovanile/">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="Come gestire rosa, calendario e presenze di una squadra giovanile">
+<meta property="og:description" content="Basta fogli Excel e gruppi WhatsApp sparsi: ecco come organizzare rosa, calendario e presenze in modo semplice, dal telefono.">
+<meta property="og:url" content="https://fwdstudio.github.io/hub/blog/gestire-rosa-calendario-squadra-giovanile/">
+<meta property="og:image" content="https://fwdstudio.github.io/hub/logo.jpeg">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Come gestire rosa, calendario e presenze di una squadra giovanile",
+  "description": "Basta fogli Excel e gruppi WhatsApp sparsi: ecco come organizzare rosa, calendario e presenze in modo semplice, dal telefono.",
+  "author": { "@type": "Organization", "name": "Fwd Studio" },
+  "publisher": { "@type": "Organization", "name": "Fwd Studio" },
+  "datePublished": "2026-08-14",
+  "mainEntityOfPage": "https://fwdstudio.github.io/hub/blog/gestire-rosa-calendario-squadra-giovanile/"
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #E9EFF4;
+    --ink: #0D3B63;
+    --ink-soft: #4A7194;
+    --sky: #4B9FDD;
+    --sky-deep: #1C6FAE;
+    --card-bg: #FFFFFF;
+    --line: rgba(13, 59, 99, 0.12);
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 0 24px;
+    position: relative;
+  }
+
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 28px 0 0;
+  }
+
+  .logo-row a { display: block; }
+  .logo-row img { height: 34px; width: auto; display: block; }
+
+  .back-link {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.05em;
+    color: var(--sky-deep);
+    text-decoration: none;
+    background: rgba(75, 159, 221, 0.14);
+    padding: 6px 11px;
+    border-radius: 20px;
+    font-weight: 700;
+  }
+
+  .eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--sky-deep);
+    margin: 40px 0 16px;
+  }
+
+  h1.title {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    font-size: clamp(28px, 7vw, 40px);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    margin: 0 0 14px;
+  }
+
+  .meta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--ink-soft);
+    margin: 0 0 36px;
+  }
+
+  article {
+    font-size: 16px;
+    line-height: 1.75;
+    color: var(--ink);
+    padding-bottom: 24px;
+  }
+
+  article h2 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 21px;
+    margin: 36px 0 14px;
+    color: var(--ink);
+  }
+
+  article h3 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 17px;
+    margin: 28px 0 10px;
+  }
+
+  article p { margin: 0 0 18px; color: var(--ink); }
+  article p.lede { font-size: 17.5px; color: var(--ink-soft); }
+
+  article ul, article ol { margin: 0 0 18px; padding-left: 22px; }
+  article li { margin-bottom: 8px; }
+
+  article a { color: var(--sky-deep); }
+
+  .cta-card {
+    background: var(--card-bg);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 20px;
+    margin: 36px 0;
+    box-shadow: 0 1px 2px rgba(13, 59, 99, 0.04);
+  }
+
+  .cta-card p.cta-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10.5px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--sky-deep);
+    margin: 0 0 8px;
+  }
+
+  .cta-card h3 { margin: 0 0 8px; }
+
+  .cta-card a.cta-button {
+    display: inline-block;
+    margin-top: 10px;
+    background: var(--sky-deep);
+    color: #fff;
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 10px 18px;
+    border-radius: 8px;
+  }
+
+  footer {
+    border-top: 1px solid var(--line);
+    padding: 22px 0 40px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--ink-soft);
+    letter-spacing: 0.03em;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  footer a { color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="logo-row">
+      <a href="../../"><img src="../../logo.jpeg" alt="Fwd Studio"></a>
+    </div>
+    <a class="back-link" href="../">← Blog</a>
+  </header>
+
+  <p class="eyebrow">Coaching · Organizzazione</p>
+  <h1 class="title">Come gestire rosa, calendario e presenze di una squadra giovanile</h1>
+  <p class="meta">14 ago 2026 · Fwd Studio</p>
+
+  <article>
+    <p class="lede">
+      Tra Excel, gruppi WhatsApp e appunti sul telefono, tenere in ordine una squadra giovanile
+      diventa presto più complicato del previsto. Ecco come semplificare rosa, calendario e
+      presenze senza perdere tempo prezioso ogni settimana.
+    </p>
+
+    <p>
+      Chi allena una squadra giovanile lo sa bene: il tempo speso a organizzare non è mai
+      davvero "lavoro da mister". Serve segnare chi si allena, chi salta la partita, aggiornare
+      i contatti dei genitori, ricordarsi la convocazione da mandare il giovedì sera. Piccole
+      cose che, sommate, rubano ore che potrebbero andare alla preparazione degli allenamenti.
+    </p>
+
+    <h2>Perché il foglio Excel non basta più</h2>
+    <p>
+      Un foglio di calcolo funziona finché la squadra è piccola e nessuno lo modifica in
+      contemporanea. Appena si aggiungono più categorie, più dirigenti che devono accedere,
+      o semplicemente più partite da tenere a mente, iniziano i problemi: versioni diverse
+      salvate su telefoni diversi, dati che si perdono, tempo speso a cercare l'ultimo
+      aggiornamento invece che a usarlo.
+    </p>
+
+    <h2>Cosa serve davvero a un allenatore giovanile</h2>
+    <p>Le esigenze, alla fine, sono sempre le stesse tre cose:</p>
+    <ul>
+      <li><strong>Una rosa sempre aggiornata</strong>, con ruoli, numeri di maglia e contatti a portata di mano</li>
+      <li><strong>Un calendario chiaro</strong> di allenamenti e partite, condivisibile con lo staff</li>
+      <li><strong>Le presenze tracciate</strong>, per capire chi si allena con continuità e chi no</li>
+    </ul>
+
+    <h3>Il problema delle convocazioni</h3>
+    <p>
+      Scrivere a mano la lista dei convocati su WhatsApp ogni settimana è il compito più
+      ripetitivo e più a rischio errore: si dimentica un giocatore, si sbaglia l'orario di
+      ritrovo, o semplicemente si perde tempo a riscrivere lo stesso messaggio con piccole
+      variazioni.
+    </p>
+
+    <div class="cta-card">
+      <p class="cta-label">Utile a questo scopo</p>
+      <h3>Mister Board</h3>
+      <p>
+        Gestisci rosa, calendario e presenze da un'unica PWA sul telefono, disegna gli schemi
+        tattici e invia le convocazioni su WhatsApp in un tocco, senza più fogli sparsi.
+      </p>
+      <a class="cta-button" href="https://fwdstudio.github.io/mister-board/">Prova la demo →</a>
+    </div>
+
+    <h2>Da dove iniziare</h2>
+    <p>
+      Il primo passo è smettere di rincorrere lo strumento sbagliato: non serve un software
+      complesso pensato per squadre professionistiche, ma qualcosa di veloce da aprire dal
+      telefono, la sera, in poco tempo — esattamente come è nata questa esigenza per noi.
+    </p>
+  </article>
+
+  <footer>
+    <span>Fwd Studio</span>
+    <span><a href="../">← Tutti gli articoli</a></span>
+  </footer>
+
+</div>
+</body>
+</html>
