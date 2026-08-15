@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Chi siamo — Fwd Studio</title>
+<meta name="description" content="Fwd Studio crea strumenti pratici e senza fronzoli: app per allenatori di calcio giovanile, per la gestione familiare e libri per chi cerca soluzioni concrete.">
+<link rel="canonical" href="https://fwdstudio.github.io/hub/chi-siamo/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chi siamo — Fwd Studio">
+<meta property="og:description" content="Fwd Studio crea strumenti pratici e senza fronzoli: app per allenatori di calcio giovanile, per la gestione familiare e libri per chi cerca soluzioni concrete.">
+<meta property="og:url" content="https://fwdstudio.github.io/hub/chi-siamo/">
+<meta property="og:image" content="https://fwdstudio.github.io/hub/logo.jpeg">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Fwd Studio",
+  "url": "https://fwdstudio.github.io/hub/",
+  "logo": "https://fwdstudio.github.io/hub/logo.jpeg",
+  "description": "Fwd Studio crea strumenti pratici per allenatori di calcio giovanile, famiglie e chi cerca soluzioni semplici, dal telefono."
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #E9EFF4;
+    --ink: #0D3B63;
+    --ink-soft: #4A7194;
+    --sky: #4B9FDD;
+    --sky-deep: #1C6FAE;
+    --card-bg: #FFFFFF;
+    --line: rgba(13, 59, 99, 0.12);
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 0 24px;
+    position: relative;
+  }
+
+  .tri-mark {
+    position: absolute;
+    top: -40px;
+    right: -60px;
+    width: 300px;
+    height: 300px;
+    opacity: 0.06;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  header {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 28px 0 0;
+  }
+
+  .logo-row a { display: block; }
+  .logo-row img { height: 34px; width: auto; display: block; }
+
+  .back-link {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.05em;
+    color: var(--sky-deep);
+    text-decoration: none;
+    background: rgba(75, 159, 221, 0.14);
+    padding: 6px 11px;
+    border-radius: 20px;
+    font-weight: 700;
+  }
+
+  .hero {
+    position: relative;
+    z-index: 1;
+    padding: 48px 0 8px;
+  }
+
+  .hero-eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--sky-deep);
+    margin: 0 0 16px;
+  }
+
+  h1 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    font-size: clamp(32px, 8vw, 46px);
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+    margin: 0 0 18px;
+  }
+
+  h1 span { color: var(--sky-deep); }
+
+  .content {
+    position: relative;
+    z-index: 1;
+    font-size: 16px;
+    line-height: 1.75;
+    padding: 16px 0 24px;
+  }
+
+  .content p { margin: 0 0 18px; color: var(--ink); }
+  .content p.lede { font-size: 17.5px; color: var(--ink-soft); }
+
+  .content h2 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    margin: 32px 0 12px;
+  }
+
+  .principles {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding-bottom: 40px;
+  }
+
+  .principle-card {
+    background: var(--card-bg);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 18px 20px;
+    box-shadow: 0 1px 2px rgba(13, 59, 99, 0.04);
+  }
+
+  .principle-card h3 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    margin: 0 0 6px;
+  }
+
+  .principle-card p {
+    font-size: 13.5px;
+    color: var(--ink-soft);
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  footer {
+    position: relative;
+    z-index: 1;
+    border-top: 1px solid var(--line);
+    padding: 22px 0 40px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--ink-soft);
+    letter-spacing: 0.03em;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  footer a { color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <svg class="tri-mark" viewBox="0 0 100 100">
+    <polygon points="10,10 90,50 10,90" fill="#0D3B63"/>
+  </svg>
+
+  <header>
+    <div class="logo-row">
+      <a href="../"><img src="../logo.jpeg" alt="Fwd Studio"></a>
+    </div>
+    <a class="back-link" href="../">← Catalogo</a>
+  </header>
+
+  <section class="hero">
+    <p class="hero-eyebrow">Chi siamo</p>
+    <h1>Strumenti pratici, <span>senza fronzoli</span></h1>
+  </section>
+
+  <div class="content">
+    <p class="lede">
+      Fwd Studio nasce da un'esigenza semplice: gli strumenti che servivano davvero
+      per allenare, organizzare e gestire le cose di tutti i giorni non esistevano,
+      o erano troppo complicati per quello che dovevano fare.
+    </p>
+    <p>
+      Da lì sono nate le nostre app e i nostri libri: pensati per essere usati dal
+      telefono, la sera, in poco tempo — senza abbonamenti nascosti, senza funzioni
+      inutili, senza bisogno di un manuale per capire come funzionano.
+    </p>
+
+    <h2>Cosa facciamo</h2>
+    <p>
+      Realizziamo PWA (applicazioni web) per chi allena squadre giovanili di calcio,
+      per la gestione della vita familiare, e pubblichiamo libri su tattica calcistica,
+      metodologia sportiva e temi pratici per genitori. Ogni prodotto nasce da un
+      problema concreto, spesso il nostro per primo.
+    </p>
+  </div>
+
+  <div class="principles">
+    <div class="principle-card">
+      <h3>Semplice prima di tutto</h3>
+      <p>Se serve un tutorial per usarlo, non è abbastanza semplice.</p>
+    </div>
+    <div class="principle-card">
+      <h3>Dal telefono, sempre</h3>
+      <p>Tutti i nostri strumenti funzionano bene anche in dieci minuti rubati alla sera.</p>
+    </div>
+    <div class="principle-card">
+      <h3>Nessun dato superfluo</h3>
+      <p>Le nostre PWA lavorano il più possibile in locale, senza raccogliere più di quanto serva.</p>
+    </div>
+  </div>
+
+  <footer>
+    <span>Fwd Studio</span>
+    <span><a href="../">← Torna al catalogo</a></span>
+  </footer>
+
+</div>
+</body>
+</html>
